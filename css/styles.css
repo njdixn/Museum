@@ -49,6 +49,7 @@ div {
 body {
   background-color: #07070e;
   color: #D4AF37;
+  background-size: cover;
   font-family: 'Garamond', sans-serif;
   margin: 0;
 }
