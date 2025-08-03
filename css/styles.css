@@ -1,0 +1,177 @@
+/*COLOR PALET----------------------
+BACKGROUND
+    HEADER - #D4AF37 - Golden
+    FOOTER - clear
+HEADINGS
+    #D4AF37 - Golden
+LINKS
+    #D4AF37 - Golden
+    HOVER - goldenrod
+    VISITED #f5e2a3 - light gold
+MAIN TEXT
+    #07070e - Dark blue-gray
+---------------------------------*/
+
+/*GLOBAL-------------------------*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 20px
+}
+
+div {
+  /* border: double #00adb5; */
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1 1 30%;
+  background-color: #e6e6e6;
+  padding: 1rem;
+  border: 2px solid #00c3ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  min-height: 160px; /* Force equal height */
+}
+
+/*BODY---------------------------*/
+body {
+  background-color: #07070e;
+  color: #D4AF37;
+  font-family: 'Garamond', sans-serif;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 20px 0;
+}
+
+[class*="col"] {
+  background-color: #fff;
+  color: #07070e;
+  opacity: 0.8;
+  font-size: 1.2em;
+  font-family: 'Calibri', sans-serif;
+  border-radius: 10px;
+  flex: 1 1 30%;
+  min-width: 250px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/*HEADER-------------------------*/
+.sticky-header {
+  background-color: #07070e;
+  color: #D4AF37;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.nav {
+  color: #D4AF37;
+  font-family: 'Garamond', sans-serif;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #D4AF37;
+  color: #07070e;
+  font-family: 'Calibri', sans-serif;
+  font-size: 1em;
+  border-radius: 4px;
+  margin: 2px;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/*HEADINGS-----------------------*/
+
+
+
+/*STAFF SECTION------------------*/
+.staff-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.staff-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  padding: 20px;
+  margin: 40px;
+}
+
+.staff-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.staff-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.staff-image img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  display: block;
+}
+
+.staff-info {
+  color: #07070e;
+  font-family: 'Calibri', serif;
+  font-size: 1.2em;
+  flex: 2;
+  padding: 20px;
+}
+
+.staff-info h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.staff-info p {
+  margin: 10px 0;
+}
+
+/*COLLECTIONS----------------------*/
+
+
+
+
+/*FOOTER-------------------------*/
+
+
+
