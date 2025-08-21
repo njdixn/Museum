@@ -16,6 +16,7 @@
       <button onclick="location.href='staff.html'">Staff</button>
       <button onclick="location.href='collections.html'">Collections</button>
 			<button onclick="location.href='shop.html'">Shop</button>
+      <button onclick="location.href='cart.html'" id="viewCartBtn">View Cart<span id="cartCount">0</span></button>
     </div>
   </header>
 
@@ -37,57 +38,73 @@ twilight-ceremonial-mask-magnet.jfif -->
 <!--SOUVENIR 1-->
       <div class="souvenir-item" data-id="skyCrown01">
         <img src="../images/shop/sky-crown-keychain.png" alt="Miniature bronze replica of the Sky Crown from the Celestial Regalia Collection" title="Sky Crown Miniature" onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">Replica of the Sky Crown worn by the Keeper of the Sun.</span>
             <h3>Sky Crown Keychain</h3>
           </div>
           <p>From the Ceremonial Headdress Collection - Cast bronze, found in the Upper Cliffs of Aruna, ceremonial headpiece symbolizing connection to the sun god.</p>
           <p><strong>Price:</strong> $14.99</p>
-          <button onclick="addToCart('skyCrown01')">Add Sky Crown Keychain to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="skyCrown01"
+            data-name="Sky Crown Miniature"
+            data-price="14.99"
+            data-image="../images/shop/sky-crown-keychain.png">
+            Add Sky Crown Keychain to Cart</button>
       </div>
 
 <!--SOUVENIR 2-->
       <div class="souvenir-item" data-id="horizonCrest02">
         <img src="../images/shop/horizon-crest-wall-plaque.jfif" alt="Decorative wall plaque featuring the Horizon Crest from the Horizon Relics Collection." title="Horizon Crest Wall Plaque" onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">Honor the Guardian of the Land in your own home.</span>
             <h3>Horizon Crest Wall Plaque</h3>
           </div>
           <p>From the Crest Collection - Hand-painted wood, inspired by the ceremonial crest found in the Aruna Plains, symbol of land guardianship.</p>
           <p><strong>Price:</strong> $32.50</p>
-          <button onclick="addToCart('horizonCrest02')">Add Horizon Crest Plaque to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="horizonCrest02"
+            data-name="Horizon Crest Wall Plaque"
+            data-price="32.50"
+            data-image="../images/shop/horizon-crest-wall-plaque.jfif">
+            Add Horizon Crest Plaque to Cart</button>
       </div>
 
 <!--SOUVENIR 3-->
       <div class="souvenir-item" data-id="riverBloom03">
         <img src="../images/shop/river-bloom-incense-holder.jfif" alt="Ceramic incense holder modeled after the River Bloom artifact from the Sacred Waters Collection." title="River Bloom Incense Holder" onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">Breathe in the blessings of the Bringer of Life.</span>
             <h3>River Bloom Incense Holder</h3>
           </div>
           <p>From the River Collection - Glazed ceramic, crafted in the style of the River Bloom artifact from the Delta of Aruna, honoring agricultural fertility.</p>
           <p><strong>Price:</strong> $14.75</p>
-          <button onclick="addToCart('riverBloom03')">Add River Bloom Incense Holder to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="riverBloom03"
+            data-name="River Bloom Incense Holder"
+            data-price="14.75"
+            data-image="../images/shop/river-bloom-incense-holder.jfif">
+            Add River Bloom Incense Holder to Cart</button>
       </div>
 
 <!--SOUVENIR 4-->
       <div class="souvenir-item" data-id="spiritHelm04">
         <img src="../images/shop/spirit-helm-miniature.png" alt="Miniature replica of the Spirit Helm from the Ancestral Guardians Collection." title="Spirit Helm Miniature" onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">Carry the protection of the Ancestors wherever you go.</span>
             <h3>Spirit Helm Miniature</h3>
           </div>
           <p>From the Ceremonial Headdress Collection - Cast resin, miniature of the Spirit Helm found in the Stone Crypts of Aruna, protective charm.</p>
           <p><strong>Price:</strong> $38.95</p>
-          <button onclick="addToCart('spiritHelm04')">Add Spirit Helm miniature to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="spiritHelm04"
+            data-name="Spirit Helm Miniature"
+            data-price="38.95"
+            data-image="../images/shop/spirit-helm-miniature.png">
+            Add Spirit Helm miniature to Cart</button>
       </div>
 
     </div>
@@ -96,57 +113,73 @@ twilight-ceremonial-mask-magnet.jfif -->
 <!--SOUVENIR 5-->
       <div class="souvenir-item" data-id="goldenCrown05">
         <img src="../images/shop/golden-crown-replica.jpeg" alt="Golden Crown Replica with ornate bronze filigree and faux gems" title="Golden Crown Replica" onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">Wear the light of the sun, as the ancients did.</span>
             <h3>Golden Crown Replica</h3>
           </div>
           <p>From the Golden Collection - Replica of the Golden Crown Headdress from the Ceremonial Headdress Collection. Worn for state rituals symbolizing divine authority.</p>
           <p><strong>Price:</strong> $45.00</p>
-          <button onclick="addToCart('goldenCrown05')">Add Golden Crown Replica to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="goldenCrown05"
+            data-name="Golden Crown Replica"
+            data-price="45.00"
+            data-image="../images/shop/golden-crown-replica.jpeg">
+            Add Golden Crown Replica to Cart</button>
       </div>
 
 <!--SOUVENIR 6-->
       <div class="souvenir-item" data-id="featheredSky06">
         <img src="../images/shop/feathered-sky-headdress-miniature.jfif" alt="Miniature replica of colorful feathered headdress with blue and red accents" title="Feathered Sky Headdress " onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">Touch the sky, one feather at a time.</span>
             <h3>Feathered Sky Headdress </h3>
           </div>
           <p>From the Ceremonial Headdress Collection - Miniature version of the Feathered Sky Headdress. Represented the connection between sky spirits and leaders.</p>
           <p><strong>Price:</strong> $29.95</p>
-          <button onclick="addToCart('featheredSky06')">Add Feathered Sky Headdress Miniature to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="featheredSky06"
+            data-name="Feathered Sky Headdress"
+            data-price="29.95"
+            data-image="../images/shop/feathered-sky-headdress-miniature.jfif">
+            Add Feathered Sky Headdress Miniature to Cart</button>
       </div>
       
 <!--SOUVENIR 7-->
       <div class="souvenir-item" data-id="oceanPearl07">
         <img src="../images/shop/ocean-pearl-circlet-keychain.png" alt="Keychain with small pearl charm and decorative band inspired by Ocean Pearl Circlet" title="Ocean Pearl Circlet Keychain" onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">May the waves always favor your journey.</span>
             <h3>Ocean Pearl Circlet Keychain</h3>
           </div>
           <p>From the Oceanina Collection - Keychain inspired by the Ocean Pearl Circlet. Symbol of protection from sea storms</p>
           <p><strong>Price:</strong> $12.50</p>
-          <button onclick="addToCart('oceanPearl07')">Add Ocean Pearl Circlet Keychain to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="oceanPearl07"
+            data-name="Ocean Pearl Circlet Keychain"
+            data-price="12.50"
+            data-image="../images/shop/ocean-pearl-circlet-keychain.png">
+            Add Ocean Pearl Circlet Keychain to Cart</button>
       </div>
       
 <!--SOUVENIR 8-->
       <div class="souvenir-item" data-id="twilightMask08">
         <img src="../images/shop/twilight-ceremonial-mask-magnet.jfif" alt="Small hand-painted fridge magnet shaped like the Twilight Ceremonial Mask" title="Twilight Ceremonial Mask Magnet" onclick="openModal(this)">
-        <div class="souvenir-item">
           <div class="tooltip">
             <span class="tooltiptext">Even the setting sun bows to the ancients</span>
             <h3>Twilight Ceremonial Mask Magnet</h3>
           </div>
           <p>From the Ceremonial Headdress Collection - Fridge magnet modeled after the Twilight Ceremonial Mask. Used in dusk ceremonies to guide spirits home</p>
           <p><strong>Price:</strong> $28.75</p>
-          <button onclick="addToCart('twilightMask08')">Add Twilight Ceremonial Mask Magnet to Cart</button>
-        </div>
+          <span class="qty-badge" aria-live="polite"></span>
+          <button onclick="addToCart(this)"
+            data-id="twilightMask08"
+            data-name="Twilight Ceremonial Mask Magnet"
+            data-price="28.75"
+            data-image="../images/shop/twilight-ceremonial-mask-magnet.jfif">
+            Add Twilight Ceremonial Mask Magnet to Cart</button>
       </div>    
 
 <!-- BLANK SOUVENIR
@@ -177,37 +210,14 @@ twilight-ceremonial-mask-magnet.jfif -->
 <!--FOOTER-->
 <footer>
   <div>
-    <p style=text-align:center;>The content in this dallery was enrirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. </p>
+    <p style=text-align:center;>The content in this gallery was enrirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. </p>
   </div>
 </footer>
 
 <!--SCRIPT-->
-  <script>
-    function addToCart(itemId) {
-      alert("Added " + itemId + " to cart (functionality to come)");
-      // Future: Push to cart array
-    }
-
-    function openModal(imgElement) {
-      const modal = document.getElementById("modal");
-      const modalImage = document.getElementById("modal-image");
-      modalImage.src = imgElement.src;
-      modalImage.alt = imgElement.alt;
-      modal.style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-
-    // Optional: Close modal on outside click
-    window.onclick = function(event) {
-      const modal = document.getElementById("modal");
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
-  </script>
+<script src="../js/cart-work.js"></script>
+<script src="../js/shop.js"></script>
+<script src="../js/cart.js"></script>
 
 </body>
 </html>

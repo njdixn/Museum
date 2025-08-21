@@ -10,6 +10,7 @@ LINKS
     VISITED #f5e2a3 - light gold
 MAIN TEXT
     #07070e - Dark blue-gray
+ICON #0d0d3f - Blue
 ---------------------------------*/
 
 /*GLOBAL-------------------------*/
@@ -66,6 +67,14 @@ body {
   background-size: cover;
   font-family: 'Garamond', sans-serif;
   margin: 0;
+}
+
+p {
+  color: #07070e;
+  border-radius: 10px;
+  font-family: 'Calibri', sans-serif;
+  font-size: 1.1em;
+  margin: 0 auto; /* horizontal centering */
 }
 
 .row {
@@ -256,9 +265,10 @@ h3 {
   margin: 5px 0;
 }
 
-.assemblaged-info {
+.assemblages-info {
   font-size: 1.2em;
 }
+
 
 /*SHOP---------------------------*/
 .shop-container {
@@ -273,6 +283,19 @@ h3 {
   flex-direction: column;
   background-color: #07070e;
   margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.souvenir-button {
+  margin-left: 40px;
+  width: 5%;
+  padding: 6px;
+  font-size: 1.6em;
+  font-weight: bold;
+  background-color: #D4AF37;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .souvenir-card {
@@ -304,6 +327,7 @@ h3 {
   margin-top: 10px;
   width: 100%;
   padding: 8px;
+  font-size: 1.2em;
   font-weight: bold;
   background-color: #D4AF37;
   color: white;
@@ -314,6 +338,193 @@ h3 {
 .souvenir-item button:hover {
   background-color: #796011;
 }
+
+/* Cart-------------------------*/
+.cart {
+  display: flex;
+  flex-direction: column;
+  background-color: #07070e;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#viewCartBtn {
+  position: relative; 
+  padding-right: 30px;
+}
+
+#cartCount {
+  position: absolute;
+  right: 5px;
+  background: #07070e;
+  color: #D4AF37;
+  font-size: 0.8em;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Updated grid to include Unit Price column */
+.cart-header {
+  display: grid;
+  grid-template-columns: 80px 2fr 1fr 1fr 1fr 1fr; /* Image | Name | Unit Price | Quantity | Total Price | Remove */
+  font-weight: bold;
+  background-color: #07070e;
+  padding: 8px 0;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 8px;
+  font-size: 1.4em;
+  color: #D4AF37;
+}
+
+/* Updated grid for cart items */
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 2fr 1fr 1fr 1fr 1fr; /* match header */
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 1.4em;
+  color: #D4AF37;
+}
+
+.cart-item-image {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cart-item-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  font-size: 1.2em;
+}
+
+.cart-item-qty button {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cart-item-qty button:hover {
+  background-color: #D4AF37;
+}
+
+/* Unit price and total price align left */
+.cart-item-price,
+.cart-item-unitprice {
+  text-align: left;
+}
+
+/* Remove button styling */
+.cart-item-remove {
+  font-size: 0.7em;
+  background-color: #07070e;
+  color: #ff0000;
+  cursor: pointer;
+  text-align: left;
+}
+
+.qty-value {
+  min-width: 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.qty-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  margin: 0; /* reset any default margin */
+  padding: 0; /* reset padding */
+}
+
+.qty-label {
+  margin: 0;
+  padding: 0;
+}
+
+main { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  padding: 16px;
+  font-family: 'calibri';
+  font-size: 1.2em;
+}
+
+.controls { 
+  margin: 8px 0 12px; 
+}
+
+.empty { 
+  padding: 12px; 
+  font-style: bold; 
+}
+
+#summary {
+  background: #D4AF37;
+  color: #07070e;
+  border-radius: 10px;
+  font-family: 'Calibri', sans-serif;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  align-self: center;
+  gap: 2px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1em; 
+  min-width: 350px;
+}
+
+/* Bold and top border for total row */
+.summary-row.total {
+  font-weight: bold;
+  border-top: 2px solid #07070e;
+}
+
+/* negative numbers in red */
+.summary-row .value.negative {
+  color: red;
+}
+
+.actions { 
+  margin-top: 12px; 
+  display: flex; 
+  gap: 20px; 
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 768px) {
+  .cart-header, .cart-item {
+    grid-template-columns: 60px 2fr 1fr 1fr 1fr 1fr; /* shrink image column slightly */
+    font-size: 1.1em;
+  }
+
+  .cart-item-qty button {
+    padding: 2px 6px;
+    font-size: 0.9rem;
+  }
+
+  #summary {
+    max-width: 90%;
+  }
+}
+
 
 /* Modal-------------------------*/
 .modal {
@@ -345,6 +556,25 @@ h3 {
   font-size: 1.2rem;
   cursor: pointer;
   color: #444;
+}
+
+
+.modal h2{
+  color: #D4AF37;
+  border-radius: 10px;
+  font-family: 'Garamond', sans-serif;
+  font-size: 2em;
+  margin: 0 auto; /* horizontal centering */
+  padding: 10px;
+}
+
+.modal p{
+  color: #07070e;
+  border-radius: 10px;
+  font-family: 'Calibri', sans-serif;
+  font-size: 1.5em;
+  margin: 0 auto; /* horizontal centering */
+  padding: 10px;
 }
 
 /* TOOL TIP---------------------------------*/

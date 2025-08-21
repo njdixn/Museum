@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Nikole Dixon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex, nofollow">
+  <title>MUSEUM of MYTHICAL SYMBOLOGY - Cart</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="sticky-header">
+	  <span class="site-title">MUSEUM of MYTHICAL SYMBOLOGY</span>
+    <div class="nav-buttons">
+      <button onclick="location.href='../index.html'">Home</button>
+      <button onclick="location.href='staff.html'">Staff</button>
+      <button onclick="location.href='collections.html'">Collections</button>
+			<button onclick="location.href='shop.html'">Shop</button>
+      <button onclick="location.href='cart.html'" id="viewCartBtn">View Cart<span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="cart">
+      <!-- NEW CONTROLS (Cart page only) -->
+      <div class="controls">
+        <label><input type="checkbox" id="memberToggle"> Member Discount (15%)</label>
+      </div>
+
+      <!-- BASIC ACTIONS -->
+      <div class="actions">
+        <button id="clearBtn">Clear Cart</button>
+        <button><a href="shop.html">Keep Shopping</a></button>
+      </div>
+
+      <!-- STATES & OUTPUT AREAS -->
+      <div id="emptyMsg" class="empty" hidden>Your cart is empty.</div>
+      <div id="items" hidden></div>
+      <pre id="summary" hidden></pre>
+
+    </div>
+  </main>
+
+  <!--FOOTER-->
+  <footer>
+    <div>
+      <p style=text-align:center;>The content in this gallery was enrirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. </p>
+    </div>
+  </footer>
+
+<script src="../js/cart-work.js"></script>
+<script src="../js/cart.js"></script>
+
+</body>
+</html>

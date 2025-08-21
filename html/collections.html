@@ -22,19 +22,20 @@
   <div class="subnav">
     <button onclick="showSection('archaeology')">Archaeology</button>
     <button onclick="showSection('anthropology')">Anthropology</button>
-    <button onclick="showSection('assemblaged')">Assemblaged</button>
+    <button onclick="showSection('assemblages')">Assemblages</button>
     <button onclick="showSection('histories')">Histories</button>
   </div>
 
-<!-- Archaeology Artifacts -->
-	<section id="archaeology" class="collection-section" style="display:none;">	
+<!-- Archaeology -->
+	<section id="archaeology" class="collection-section">	
     <div class="collections">
-      <h1>Archaeology Artifacts</h1>
+      <h1>Archaeology</h1>
 
 <!-- Collection 1 -->
       <div class="collections-card">
         <div class="collections-image">
-           <img src="../images/collections/bronze-dagger.png" alt="Bronze Dagger Type IV-B">
+          <img id="BronzeDagger" class="open-modal" data-modal-target="#modal-BronzeDagger-Archaeology" 
+          src="../images/collections/bronze-dagger.png" alt="photo of a wooden pottery rib"></siv>
         </div>
         
         <div class="collections-info">
@@ -58,7 +59,8 @@
 <!-- Collection 2 -->
 		  <div class="collections-card">
         <div class="collections-image">
-            <img src="../images/collections/stone-mortar.jpeg" alt="Basalt Mortar (Type M-B5)">
+            <img id="BasaltMortar" class="open-modal" data-modal-target="#modal-BasaltMortar" 
+            src="../images/collections/stone-mortar.jpeg" alt="Basalt Mortar (Type M-B5)">
         </div>
 
         <div class="collections-info">
@@ -82,7 +84,8 @@
 <!-- Collection 3 -->
       <div class="collections-card">
         <div class="collections-image">
-            <img src="../images/collections/clay-torage-jar.jpeg" alt="Large Coarseware Storage Jar (Type S-27)">
+            <img id="StorageJar" class="open-modal" data-modal-target="#modal-StorageJar" 
+            src="../images/collections/clay-torage-jar.jpeg" alt="Large Coarseware Storage Jar (Type S-27)">
         </div>
         
         <div class="collections-info">
@@ -105,15 +108,16 @@
     </div>
   </section>
 
-<!-- Anthropology Remains & Artifacts -->
+<!-- Anthropology -->
 	<section id="anthropology" class="collection-section" style="display:none;">
     <div class="collections">
-      <h1>Anthropology Remains & Artifacts</h1>
+      <h1>Anthropology</h1>
 
 <!-- Collection 4 -->
       <div class="collections-card">
         <div class="collections-image">
-            <img src="../images/collections/ceremonial-headdress.jpeg" alt="Feathered Headdress with Wooden Frame">
+            <img id="FeatheredHeaddress" class="open-modal" data-modal-target="#modal-FeatheredHeaddress" 
+            src="../images/collections/ceremonial-headdress.jpeg" alt="Feathered Headdress with Wooden Frame">
         </div>
         
         <div class="collections-info">
@@ -137,7 +141,8 @@
 <!-- Collection 5 -->
       <div class="collections-card">
         <div class="collections-image">
-            <img src="../images/collections/beaded-necklace.jpeg" alt="String of Shell and Bone Beads">
+            <img id="ShellBoneBeads" class="open-modal" data-modal-target="#modal-ShellBoneBeads" 
+            src="../images/collections/beaded-necklace.jpeg" alt="String of Shell and Bone Beads">
         </div>
         
         <div class="collections-info">
@@ -161,7 +166,8 @@
 <!-- Collection 6 -->
       <div class="collections-card">
         <div class="collections-image">
-          <img src="../images/collections/tattooing-needle-bundle.jpeg" alt="Bundle of Bone Tattooing Needles">
+          <img id="TattooingNeedles" class="open-modal" data-modal-target="#modal-TattooingNeedles" 
+          src="../images/collections/tattooing-needle-bundle.jpeg" alt="Bundle of Bone Tattooing Needles">
         </div>
               
         <div class="collections-info">
@@ -184,12 +190,12 @@
     </div>
   </section>
 
-<!-- Assemblaged -->
-  <section id="assemblaged" class="collection-section" style="display:none;">
+<!-- Assemblages -->
+  <section id="assemblages" class="collection-section" style="display:none;">
     <h1>Headdresses</h1>
     <div class="collections-card">
       <div class="collections-image">
-        <img src="../images/collections/assemblaged/ceremonial-headdress-1.jpeg" alt="Sky Crown — Keeper of the Sun">
+        <img src="../images/collections/assemblages/ceremonial-headdress-1.jpeg" alt="Sky Crown — Keeper of the Sun">
         <div class="collections-info">
           <h2>Sky Crown</h2>
           <h3>Keeper of the Sun</h3>
@@ -202,7 +208,7 @@
       </div>
 
       <div class="collections-image">
-        <img src="../images/collections/assemblaged/ceremonial-headdress-2.jpeg" alt="Horizon Crest — Guardian of the Land">
+        <img src="../images/collections/assemblages/ceremonial-headdress-2.jpeg" alt="Horizon Crest — Guardian of the Land">
         <div class="collections-info">
           <h2>Horizon Crest</h2>
           <h3>Guardian of the Land</h3>
@@ -215,7 +221,7 @@
       </div>
 
       <div class="collections-image">
-        <img src="../images/collections/assemblaged/ceremonial-headdress-3.jpeg" alt="River Bloom — Bringer of Life">
+        <img src="../images/collections/assemblages/ceremonial-headdress-3.jpeg" alt="River Bloom — Bringer of Life">
         <div class="collections-info">
           <h2>River Bloom</h2>
           <h3>Bringer of Life</h3>
@@ -228,7 +234,7 @@
       </div>
 
       <div class="collections-image">
-        <img src="../images/collections/assemblaged/ceremonial-headdress-4.jpeg" alt="Spirit Helm — Protector of the Ancestors">
+        <img src="../images/collections/assemblages/ceremonial-headdress-4.jpeg" alt="Spirit Helm — Protector of the Ancestors">
         <div class="collections-info">
           <h2>Spirit Helm</h2>
           <h3>Protector of the Ancestors</h3>
@@ -242,7 +248,7 @@
     </div>
 
     <div class="collections-card">
-      <div class="assemblaged-info">
+      <div class="assemblages-info">
         <p>The feathered ceremonial headdress from Cave 2 was found alongside three other headdresses of differing materials and designs, each carefully placed on a low stone platform. While the recovered specimen features a hardwood frame, woven plant fiber bindings, macaw feathers, and shell inlay with spiral motifs, the others exhibited variations—one with predominantly black and white feathers arranged in a fan shape, another adorned with woven reed extensions and dyed fiber tassels, and a fourth crafted almost entirely from carved wooden panels painted in vivid pigments. The grouping suggests a deliberate arrangement, possibly representing a set of regalia used in distinct ceremonial roles.</p>
         
         <p>The visual differences between them may have been a form of nonverbal communication within ritual practice. The macaw-feather headdress, with its vibrant red, yellow, and blue hues, could have signified vitality, seasonal abundance, or a leadership role tied to agricultural rites. In contrast, the black-and-white fan-shaped headdress may have been worn during funerary or transition rites, its stark contrast symbolizing life and death or the balance between worlds. The reed-and-tassel version might have been used in ceremonies related to water, fertility, or communal gatherings, while the painted wooden-panel headdress could have marked a storyteller, historian, or ritual officiant, its rigid structure implying authority and permanence.</p>
@@ -260,14 +266,234 @@
 
 <!-- Histories -->
   <section id="histories" class="collection-section" style="display:none;">
-    <h1>Histories</h1>
-    <h2>Under Construction</h2>
+    <div class="histories-header">
+      <h1>Histories</h1>
+    </div>
+<!-- Dagger -->
+       <div class="collections-card">
+        <div class="collections-image">
+          <img id="BronzeDagger" class="open-modal" data-modal-target="#modal-BronzeDagger-Archaeology" 
+          src="../images/collections/bronze-dagger.png" alt="photo of a wooden pottery rib"></siv>
+        </div>
+
+        <div class="collections-info">
+          <h2>Bronze Dagger</h2>
+          <h3>Artifact Facts</h3>
+          <p>Artifact ID: BronzeDagger-Archaeology</p>
+          <p>Title: Bronze Dagger Type IV-B</p>
+          <p>Culture: Tell Qarnat</p>
+          <p>Estimated Age: ~3,200 years (carbon-dated from associated wood handle fragments)</p>
+          <p>Material: Cast bronze alloy (copper with ~10% tin)</p>
+          <p>Origin: Tell Qarnat, Layer III, Grid 7B</p>
+        </div>
+
+      <div class="collections-info">
+        <h4>Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>Comparative Notes</h4>
+        <p></p>
+        <br>
+        <h4>Cautionary Note on Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>On Display Courtesy Of</h4>
+        <p></p>
+        <br>
+        <h4>Additional Notes</h4>
+        <p></p>
+      </div>
+    </div>
+    
+
+<!-- Mortar -->
+       <div class="collections-card">
+        <div class="collections-image">
+          <img id="BronzeDagger" class="open-modal" data-modal-target="#modal-BronzeDagger-Archaeology" 
+          src="../images/collections/stone-mortar.jpeg" alt="photo of a wooden pottery rib"></siv>
+        </div>
+
+        <div class="collections-info">
+          <h2>Stone Mortar</h2>
+          <h3>Artifact Facts</h3>
+          <p>Artifact ID: BasaltMortar</p>
+          <p>Title: Basalt Mortar (Type M-B5)</p>
+          <p>Culture: Khirbet Dura Europos</p>
+          <p>Estimated Age: ~4,500 years (layer association with Early Bronze Age pottery)</p>
+          <p>Material: Fine-grained basalt</p>
+          <p>Origin: Khirbet Dura Europos, Trench 4A</p>
+        </div>
+
+      <div class="collections-info">
+        <h4>Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>Comparative Notes</h4>
+        <p></p>
+        <br>
+        <h4>Cautionary Note on Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>On Display Courtesy Of</h4>
+        <p></p>
+        <br>
+        <h4>Additional Notes</h4>
+        <p></p>
+      </div>
+    </div>
+    
+<!-- Jar -->
+       <div class="collections-card">
+        <div class="collections-image">
+          <img id="BronzeDagger" class="open-modal" data-modal-target="#modal-BronzeDagger-Archaeology" 
+          src="../images/collections/clay-torage-jar.jpeg" alt="photo of a wooden pottery rib"></siv>
+        </div>
+
+        <div class="collections-info">
+          <h2>Clay Storage Jar</h2>
+          <h3>Artifact Facts</h3>
+          <p>Artifact ID: StorageJar</p>
+          <p>Title: Large Coarseware Storage Jar (Type S-27)</p>
+          <p>Culture: Khirokitia</p>
+          <p>Estimated Age: ~2,100 years (stratigraphic dating from associated coinage)</p>
+          <p>Material: Fired clay with visible quartz temper</p>
+          <p>Origin: Khirokitia South Sector, Room 3</p>
+        </div>
+
+      <div class="collections-info">
+        <h4>Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>Comparative Notes</h4>
+        <p></p>
+        <br>
+        <h4>Cautionary Note on Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>On Display Courtesy Of</h4>
+        <p></p>
+        <br>
+        <h4>Additional Notes</h4>
+        <p></p>
+      </div>
+    </div>
+    
+<!-- Headdress -->
+       <div class="collections-card">
+        <div class="collections-image">
+          <img id="BronzeDagger" class="open-modal" data-modal-target="#modal-BronzeDagger-Archaeology" 
+          src="../images/collections/ceremonial-headdress.jpeg" alt="photo of a wooden pottery rib"></siv>
+        </div>
+
+        <div class="collections-info">
+          <h2>Ceremonial Headdress</h2>
+          <h3>Artifact Facts</h3>
+          <p>Artifact ID: FeatheredHeaddress</p>
+          <p>Title: Feathered Headdress with Wooden Frame</p>
+          <p>Culture: Highland</p>
+          <p>Estimated Age: ~350 years (dendrochronology on wood frame)</p>
+          <p>Material: Hardwood frame, woven plant fibers, macaw feathers, shell inlay</p>
+          <p>Origin: Highland ceremonial site</p>
+        </div>
+
+      <div class="collections-info">
+        <h4>Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>Comparative Notes</h4>
+        <p></p>
+        <br>
+        <h4>Cautionary Note on Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>On Display Courtesy Of</h4>
+        <p></p>
+        <br>
+        <h4>Additional Notes</h4>
+        <p></p>
+      </div>
+    </div>
+    
+<!-- Neakless -->
+       <div class="collections-card">
+        <div class="collections-image">
+          <img id="BronzeDagger" class="open-modal" data-modal-target="#modal-BronzeDagger-Archaeology" 
+          src="../images/collections/beaded-necklace.jpeg" alt="photo of a wooden pottery rib"></siv>
+        </div>
+
+        <div class="collections-info">
+          <h2>Beaded Necklace</h2>
+          <h3>Artifact Facts</h3>
+          <p>Artifact ID: ShellBoneBeads</p>
+          <p>Title: String of Shell and Bone Beads</p>
+          <p>Culture: Tell Qarnat</p>
+          <p>Estimated Age: ~1,200 years (AMS carbon dating on bone beads)</p>
+          <p>Material: Marine shell (various species), carved animal bone</p>
+          <p>Origin: Coastal burial mound, Site 14C</p>
+        </div>
+
+      <div class="collections-info">
+        <h4>Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>Comparative Notes</h4>
+        <p></p>
+        <br>
+        <h4>Cautionary Note on Interpretation</h4>
+        <p></p>
+        <br>
+        <h4>On Display Courtesy Of</h4>
+        <p></p>
+        <br>
+        <h4>Additional Notes</h4>
+        <p></p>
+      </div>
+    </div>
+    
+<!-- Tattooing -->
+       <div class="collections-card">
+        <div class="collections-image">
+          <img id="BronzeDagger" class="open-modal" data-modal-target="#modal-BronzeDagger-Archaeology" 
+          src="../images/collections/tattooing-needle-bundle.jpeg" alt="photo of a wooden pottery rib"></siv>
+        </div>
+
+        <div class="collections-info">
+          <h2>Tattooing Needle Bundle</h2>
+          <h3>Artifact Facts</h3>
+          <p>Artifact ID: TattooingNeedles</p>
+          <p>Title: Bundle of Bone Tattooing Needles</p>
+          <p>Culture: Tell Qarnat</p>
+          <p>Estimated Age: ~600 years (AMS carbon dating on binding fiber)</p>
+          <p>Material: Bird bone (sharpened), plant fiber binding, resin adhesive</p>
+          <p>Origin: Riverbank habitation site, Area B2</p>
+        </div>
+
+        <div class="collections-info">
+          <h4>Interpretation</h4>
+          <p>Recovered from a domestic hut floor deposit with a small stone pigment grinder and a lump of carbon-based pigment (burial/habitat context; found with), the artifact situates tattooing within both ritual and daily life. The association with pigment suggests preparation, application, and ceremonial significance. This artifact comprises bird bone needles sharpened to fine points, bound in small clusters using plant fiber and resin adhesive (material/manufacture clues). Needle tips were polished to reduce skin trauma, and slight bending of some points and pigment residue indicate repeated use for tattooing (evidence of use). The binding method reflects care in organization and ritualized handling. The bundle measures 15 cm in total length, with individual needles between 7 and 12 cm, weighing 38 g (dimensions/physical properties). Minor fiber fraying is present, but the cluster structure remains intact (preservation state), preserving the relationship between needles, adhesive, and binding materials.</p>
+          <br>
+          <h4>Comparative Notes</h4>
+          <p>The bundle aligns with tattooing implements documented across Polynesian cultural areas (comparison), revealing shared technological strategies, symbolic systems, and aesthetic preferences. The artifact demonstrates how craft, ritual practice, and bodily marking intersect, reflecting cultural continuity and identity.</p>
+          <br>
+          <h4>Cautionary Note on Interpretation</h4>
+          <p>Dr. Calypso Miren Elouan interprets the bundle as a layered artifact: functional, symbolic, and relational. Beyond their practical use, the needles carry meanings related to social roles, aesthetic expression, and spiritual connections within the community. The traces of pigment, polished tips, and careful binding provide tangible links to the ceremonial enactment of cultural knowledge.</p>
+          <br>
+          <h4>On Display Courtesy Of</h4>
+          <p>Riverbank habitation site, Area B2</p>
+          <br>
+          <h4>Additional Notes</h4>
+          <p>The bundle is complete and well-preserved despite minor fiber fraying (preservation state). Display should highlight the needles’ arrangement, evidence of use, and craftsmanship, emphasizing the continuity of material practice, ritual significance, and ancestral memory. Dr. Elouan reminds us: “Meaning isn’t a puzzle with one answer. It’s a mosaic of perspectives, some chipped, some vivid,” inviting visitors to engage with the artifact as both a material object and a living trace of cultural practice.</p>
+        </div>
+    </div>
+    
+
+    <a href="collections.html">Back to Collections</a>
   </section>
 
 <!--Footer-->
 <footer>
   <div>
-    <p style=text-align:center;>The content in this dallery was enrirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. </p>
+    <p style=text-align:center;>The content in this gallery was enrirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. </p>
   </div>
 </footer>
 
@@ -295,6 +521,56 @@
                 </div>
             </div>-->
 
+<!-- keep your existing overlay + .modal/.modal-content styles -->
+    <div class="modal" id="modal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content  histories-modal">
+            <button class="close-modal" aria-label="Close">x</button>
+            <div id="modal-body"></div> <!-- text gets injected inside the div-->
+        </div>
+    </div>
+
+    <div class="modal-item" id="modal-BronzeDagger-Archaeology" hidden>
+      <h2 id="modal-title">The Bronze Dagger</h2>
+      <p>~3,200 years | Tell Qarnat, Layer III, Grid 7B | Cast bronze alloy</p>
+      <p>The Bronze Dagger (~3,200 years; carbon-dated handle fragments) is a cast bronze alloy (copper with ~10% tin) double-edged leaf-shaped blade with a short tang (material/physical properties). Geometric chevron incisions at the blade base (cultural context) and sharpening striations (manufacture clues) indicate both functional and symbolic craftsmanship. Fine edge chipping, slight tip bending, and surface scratches (evidence of use) suggest active combat or ritualized handling. Interred in a shallow, stone-lined grave with a ceramic drinking vessel and two bronze arrowheads (burial/found with) situates the dagger in a social and ceremonial network, perhaps signaling status or protective ritual. Minor corrosion and missing organic handle (preservation state) emphasize both presence and absence, leaving aspects of performance and meaning ambiguous. Stylistic parallels with Late Bronze Age daggers in Ugarit (comparison) position the dagger within regional symbolic and martial traditions. Dr. Elouan would layer these material, contextual, and ritual cues, honoring both archaeological evidence and lived memory.
+      </p>
+    </div>
+
+    <div class="modal-item" id="modal-BasaltMortar" hidden>
+        <h2 id="modal-title">Basalt Mortar (Type M-B5)</h2>
+        <p>~4,500 years; Early Bronze Age layer association | Khirbet Dura Europos, Trench 4A | Fine-grained basalt</p>
+        <p>The Basalt Mortar (~4,500 years; Early Bronze Age layer association) is a fine-grained basalt basin with a slightly flared rim (material/physical properties). Pecking marks on the exterior and a polished interior (manufacture clues; evidence of use) indicate deliberate shaping and repeated grinding activity. Traces of red ochre powder (cultural context; evidence of use) suggest processing not only of seeds but possibly pigments for ritual or decorative purposes. Found on the floor of a rectangular domestic structure alongside an obsidian blade fragment and a small pestle head (burial/found with), it situates the mortar in daily and ceremonial life. Light rim chipping and complete preservation (preservation state) highlight both endurance and fragility. Stylistic and functional parallels with Early Bronze mortars from the Jordan Valley (comparison) position it within regional practices. Dr. Elouan would layer these material, contextual, and symbolic cues, treating the mortar as a lived, ritualized object, echoing both labor and ceremonial gesture. 
+        </p>
+    </div>
+
+    <div class="modal-item" id="modal-StorageJar" hidden>
+        <h2 id="modal-title">Large Coarseware Storage Jar (Type S-27)</h2>
+        <p>~2,100 years; stratigraphic dating | Khirokitia South Sector, Room 3 | Fired clay with visible quartz temper</p>
+        <p>The Large Coarseware Storage Jar (~2,100 years; stratigraphic dating) is a hand-built, bulbous fired clay vessel with visible quartz temper, a narrow neck, and partially preserved slip on the wheel-finished rim (material/physical properties; manufacture clues). Interior grain husk residue and exterior soot near the base (evidence of use) indicate repeated domestic storage and heating of dry goods or liquids. Found in a stone-walled dwelling’s storage pit with three smaller amphorae and a grinding stone (burial/found with), it situates the jar within daily food processing and household ritual. Missing upper rim and worn surface (preservation state) emphasize fragility and partial survival. Stylistic parallels with Hellenistic storage jars from the Eastern Mediterranean (comparison) link the vessel to broader trade and craft networks. Dr. Elouan would layer material, contextual, and symbolic cues, honoring the jar’s practical, ceremonial, and temporal significance while foregrounding ambiguity and co-authored interpretation.
+        </p>
+    </div>
+
+    <div class="modal-item" id="modal-FeatheredHeaddress" hidden>
+        <h2 id="modal-title">Feathered Headdress with Wooden Frame</h2>
+        <p>~350 years; dendrochronology | Highland ceremonial site, Cave 2 | Hardwood frame, woven plant fibers, macaw feathers, shell inlay </p>
+        <p>The Feathered Headdress (~350 years; dendrochronology) combines a carved hardwood frame, woven plant fibers, macaw feathers, and shell inlay (material/context). The crescent-shaped frame with upward plume, drilled holes, and decorative fiber bindings (physical/cultural context) indicate careful, ritualized manufacture, while frayed ties and worn shell inlay (evidence of use) suggest repeated ceremonial use. Placed on a stone platform within a highland cave alongside wooden flutes and a painted gourd (burial/found with), it functioned in performative, high-status ritual, mediating social and spiritual identity. Partial preservation—faded, broken feathers but intact frame—emphasizes both presence and absence, allowing multiple readings. Stylistic parallels with pre-Columbian highland regalia (comparison) situate the headdress in a spiralic timeline of Andean ceremonial practice. Dr. Elouan would layer these material, contextual, and symbolic cues, foregrounding ambiguity, co-authored interpretation, and ethical stewardship, treating the headdress as a living echo of ritual, memory, and ancestral authority rather than a static object.
+        </p>
+    </div>
+
+    <div class="modal-item" id="modal-ShellBoneBeads" hidden>
+        <h2 id="modal-title">String of Shell and Bone Beads</h2>
+        <p>~1,200 years (AMS carbon dating on bone beads) | Coastal burial mound, Site 14C | Marine shell (various species), carved animal bone</p>
+        <p>The ShellBoneBeads (~1,200 years; AMS carbon dating) combine marine shell and finely carved bone (material/context), cylindrical and disk shapes, and drilled, friction-polished holes (evidence of use), signaling repeated handling and ritual intimacy. At 52 cm, the string was wearable, suggesting personal ornamentation that mediated social or spiritual identity. Found in a secondary burial within a woven mat alongside a carved wooden pendant fragment (burial/found with), the beads participated in deliberate funerary performance. Stylistic parallels with contemporary Pacific burials (comparison) reveal spiralic cultural continuity, resisting linear Western chronologies. Partial preservation (34 beads intact) and missing stringing material highlight ambiguity; meaning is layered, not fixed. From a Queer Polynesian lens, these beads challenge binary interpretations of gender, age, or status. Dr. Elouan would foreground collaborative storytelling, honoring both material evidence and descendant knowledge, treating the beads as a frozen ritual moment—an echo of life, memory, and ceremonial resonance.
+        </p>
+    </div>
+
+    <div class="modal-item" id="modal-TattooingNeedles" hidden>
+        <h2 id="modal-title">Bundle of Bone Tattooing Needles</h2>
+        <p>~600 years (AMS carbon dating on binding fiber) | Riverbank habitation site, Area B2 | Bird bone (sharpened), plant fiber binding, resin adhesive</p>
+        <p>The Bundle of Bone Tattooing Needles (~600 years; AMS carbon-dated plant fiber) consists of sharpened bird bones bound in small clusters with resin adhesive (material/physical properties; manufacture clues). Polished tips and pigment residues (cultural context; evidence of use) indicate repeated skin puncturing, while slight bending of some points signals active use. Found on the floor of a domestic hut alongside a small stone pigment grinder and a lump of carbon-based pigment (burial/found with), the needles situate tattooing within intimate, household ritual practices. Individual needles measure 7–12 cm within a 15 cm bundle (dimensions), totaling 38 g, emphasizing portability and repeated handling. Preservation is complete with minor fiber fraying (preservation state), reflecting both care and the fragility of organic components. Stylistic parallels with Polynesian tattoo implements (comparison) suggest continuity of practice. Dr. Elouan would layer material, contextual, and symbolic cues, honoring lived ritual, generational memory, and the intimate performance of marking identity while acknowledging ambiguity in exact ceremonial meanings.
+        </p>
+    </div>
+
   <script>
     function showSection(section) {
       const sections = document.querySelectorAll('.collection-section');
@@ -302,6 +578,46 @@
       document.getElementById(section).style.display = 'block';
     }
   </script>
-</body>
+  <script>
+(function(){
+  const modal      = document.getElementById('modal');
+  const modalBody  = document.getElementById('modal-body');
+  const closeBtn   = modal.querySelector('.close-modal');
+  let lastTrigger  = null;
 
+  function openFrom(selector, trigger){
+    const src = document.querySelector(selector);
+    if (!src) { console.warn('Missing modal content:', selector); return; }
+    modalBody.innerHTML = src.innerHTML;        // inject text HTML
+    modal.style.display = 'block';
+    lastTrigger = trigger || null;
+    closeBtn.focus();
+    document.body.style.overflow = 'hidden';    // no scroll under modal
+  }
+
+  function closeModal(){
+    modal.style.display = 'none';
+    modalBody.innerHTML = '';
+    document.body.style.overflow = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  // open on any element with data-modal-target
+  document.addEventListener('click', (e)=>{
+    const trigger = e.target.closest('[data-modal-target]');
+    if (trigger){
+      e.preventDefault();
+      openFrom(trigger.getAttribute('data-modal-target'), trigger);
+      return;
+    }
+    if (e.target === modal || e.target.closest('.close-modal')) closeModal();
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+  });
+})();
+  </script>
+
+</body>
 </html>
