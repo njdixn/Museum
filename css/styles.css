@@ -33,9 +33,9 @@ a {
   color:#D4AF37;
 }
 
-a:hover {
-  color:#796011;
-
+button:hover {
+  background-color:#796011;
+  color: white;
 }
 
 a:visited {
@@ -120,9 +120,9 @@ p {
 
 .logo-image {
   display: flex;
-  align-items: center;   /* vertically centers items */
-  justify-content: center; /* centers horizontally if container is wide */
-  gap: 10px;  /* space between image and text */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .logo-image img{
@@ -139,6 +139,23 @@ p {
 .nav-buttons {
   display: flex;
   gap: 10px;
+}
+
+.nav-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background-color: #D4AF37;
+  color: #07070e;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.nav-buttons button i {
+  font-size: 1.2em;
 }
 
 button {
@@ -282,6 +299,12 @@ h3 {
 .collections-info h2 {
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+.collections-info h4 {
+  color: #D4AF37;
+  font-size: 1.2em;
+  font-family: 'Garamond', serif;
 }
 
 .collections-info p {
@@ -587,6 +610,11 @@ main {
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+
+.actions a:hover {
+  background-color:#796011;
+  color: white;
 }
 
 /* --- Responsive tweaks --- */
