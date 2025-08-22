@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="noindex, nofollow">
   <title>MUSEUM of MYTHICAL SYMBOLOGY - Cart</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://kit.fontawesome.com/cd3dac48b3.js" crossorigin="anonymous"></script>	
 </head>
 <body>
   <header class="sticky-header">
@@ -16,12 +17,22 @@
 			<span class="site-title">MUSEUM of MYTHICAL SYMBOLOGY</span>
 		</div>
     <div class="nav-buttons">
-      <button onclick="location.href='../index.html'">Home</button>
-      <button onclick="location.href='staff.html'">Staff</button>
-      <button onclick="location.href='collections.html'">Collections</button>
-			<button onclick="location.href='shop.html'">Shop</button>
-      <button onclick="location.href='cart.html'" id="viewCartBtn">View Cart<span id="cartCount">0</span></button>
-    </div>
+			<button onclick="location.href='../index.html'">
+				<i class="fas fa-home"></i> Home
+			</button>
+			<button onclick="location.href='staff.html'">
+				<i class="fa-solid fa-award"></i> Staff
+			</button>
+			<button onclick="location.href='collections.html'">
+				<i class="fas fa-book"></i> Collections
+			</button>
+			<button onclick="location.href='shop.html'">
+				<i class="fa-solid fa-shop"></i> Shop
+			</button>
+			<button onclick="location.href='cart.html'" id="viewCartBtn">
+				<i class="fas fa-shopping-cart"></i>Cart <span id="cartCount">0</span>
+			</button>
+		</div>
   </header>
 
   <main>
@@ -33,8 +44,8 @@
 
       <!-- BASIC ACTIONS -->
       <div class="actions">
-        <button id="clearBtn">Clear Cart</button>
-        <a href="shop.html">Keep Shopping</a>
+        <button id="clearBtn"><i class="fa-solid fa-caret-left"></i>Clear Cart</button>
+        <a href="shop.html"><i class="fa-solid fa-bag-shopping"></i> Keep Shopping</a>
       </div>
 
       <!-- STATES & OUTPUT AREAS -->

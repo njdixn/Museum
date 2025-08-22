@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="noindex, nofollow">
   <title>MUSEUM of MYTHICAL SYMBOLOGY - Collections</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://kit.fontawesome.com/cd3dac48b3.js" crossorigin="anonymous"></script>	
 </head>
 <body>
   <header class="sticky-header">
@@ -16,18 +17,26 @@
 			<span class="site-title">MUSEUM of MYTHICAL SYMBOLOGY</span>
 		</div>
     <div class="nav-buttons">
-      <button onclick="location.href='../index.html'">Home</button>
-      <button onclick="location.href='staff.html'">Staff</button>
-      <button onclick="location.href='collections.html'">Collections</button>
-			<button onclick="location.href='shop.html'">Shop</button>
-    </div>
+			<button onclick="location.href='../index.html'">
+				<i class="fas fa-home"></i> Home
+			</button>
+			<button onclick="location.href='staff.html'">
+				<i class="fa-solid fa-award"></i> Staff
+			</button>
+			<button onclick="location.href='collections.html'">
+				<i class="fas fa-book"></i> Collections
+			</button>
+			<button onclick="location.href='shop.html'">
+				<i class="fa-solid fa-shop"></i> Shop
+			</button>
+		</div>
   </header>
 
   <div class="subnav">
-    <button onclick="showSection('archaeology')">Archaeology</button>
-    <button onclick="showSection('anthropology')">Anthropology</button>
-    <button onclick="showSection('assemblages')">Assemblages</button>
-    <button onclick="showSection('histories')">Histories</button>
+    <button onclick="showSection('archaeology')"><i class="fa-solid fa-jar"></i> Archaeology</button>
+    <button onclick="showSection('anthropology')"><i class="fa-solid fa-circle-notch"></i> Anthropology</button>
+    <button onclick="showSection('assemblages')"><i class="fa-solid fa-arrows-to-circle"></i> Assemblages</button>
+    <button onclick="showSection('histories')"><i class="fa-solid fa-timeline"></i> Histories</button>
   </div>
 
 <!-- Archaeology -->
@@ -284,7 +293,7 @@
 
         <div class="collections-info">
           <h2>Bronze Dagger</h2>
-          <h3>Artifact Facts</h3>
+          <h4>Artifact Facts</h4>
           <p>Artifact ID: BronzeDagger-Archaeology</p>
           <p>Title: Bronze Dagger Type IV-B</p>
           <p>Culture: Tell Qarnat</p>
@@ -323,7 +332,7 @@
 
         <div class="collections-info">
           <h2>Stone Mortar</h2>
-          <h3>Artifact Facts</h3>
+          <h4>Artifact Facts</h4>
           <p>Artifact ID: BasaltMortar</p>
           <p>Title: Basalt Mortar (Type M-B5)</p>
           <p>Culture: Khirbet Dura Europos</p>
@@ -362,7 +371,7 @@
 
         <div class="collections-info">
           <h2>Clay Storage Jar</h2>
-          <h3>Artifact Facts</h3>
+          <h4>Artifact Facts</h4>
           <p>Artifact ID: StorageJar</p>
           <p>Title: Large Coarseware Storage Jar (Type S-27)</p>
           <p>Culture: Khirokitia</p>
@@ -401,7 +410,7 @@
 
         <div class="collections-info">
           <h2>Ceremonial Headdress</h2>
-          <h3>Artifact Facts</h3>
+          <h4>Artifact Facts</h4>
           <p>Artifact ID: FeatheredHeaddress</p>
           <p>Title: Feathered Headdress with Wooden Frame</p>
           <p>Culture: Highland</p>
@@ -440,7 +449,7 @@
 
         <div class="collections-info">
           <h2>Beaded Necklace</h2>
-          <h3>Artifact Facts</h3>
+          <h4>Artifact Facts</h4>
           <p>Artifact ID: ShellBoneBeads</p>
           <p>Title: String of Shell and Bone Beads</p>
           <p>Culture: Tell Qarnat</p>
@@ -479,7 +488,7 @@
 
         <div class="collections-info">
           <h2>Tattooing Needle Bundle</h2>
-          <h3>Artifact Facts</h3>
+          <h4>Artifact Facts</h4>
           <p>Artifact ID: TattooingNeedles</p>
           <p>Title: Bundle of Bone Tattooing Needles</p>
           <p>Culture: Tell Qarnat</p>
@@ -511,37 +520,6 @@
 
     <a href="collections.html">Back to Collections</a>
   </section>
-
-<!--Footer-->
-<footer>
-  <div>
-    <p style=text-align:center;>The content in this gallery was enrirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. </p>
-  </div>
-</footer>
-
-<!--BLANK COPY OF COLLECTIONS CARD
-            <div class="collections-card">
-                <div class="collections-image">
-                    <img src="../images/collections/ .jpeg" alt=" ">
-                </div>
-                
-                <div class="collections-info">
-                    <h2> </h2>
-                    <p><strong>Name:</strong> </p>
-                    <p><strong>Material:</strong> </p>
-                    <p><strong>Size/Weight/Shape:</strong> </p>
-                    <p><strong>Estimated Age:</strong> </p>
-                    <p><strong>Preservation State:</strong> </p>
-                    <p><strong>Location Found:</strong> </p>
-                    <p><strong>Likely Purpose:</strong> </p>
-                    <p><strong>Evidence of Use:</strong> </p>
-                    <p><strong>Manufacture Clues:</strong> </p>
-                    <p><strong>Found With:</strong> </p>
-                    <p><strong>Burial or Habitat Context:</strong> </p>
-                    <p><strong>Symbolism:</strong> </p>
-                    <p><strong>Comparison:</strong> </p>
-                </div>
-            </div>-->
 
 <!-- keep your existing overlay + .modal/.modal-content styles -->
     <div class="modal" id="modal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="modal-BronzeDagger2">
@@ -592,6 +570,37 @@
         <p>The Bundle of Bone Tattooing Needles (~600 years; AMS carbon-dated plant fiber) consists of sharpened bird bones bound in small clusters with resin adhesive (material/physical properties; manufacture clues). Polished tips and pigment residues (cultural context; evidence of use) indicate repeated skin puncturing, while slight bending of some points signals active use. Found on the floor of a domestic hut alongside a small stone pigment grinder and a lump of carbon-based pigment (burial/found with), the needles situate tattooing within intimate, household ritual practices. Individual needles measure 7–12 cm within a 15 cm bundle (dimensions), totaling 38 g, emphasizing portability and repeated handling. Preservation is complete with minor fiber fraying (preservation state), reflecting both care and the fragility of organic components. Stylistic parallels with Polynesian tattoo implements (comparison) suggest continuity of practice. Dr. Elouan would layer material, contextual, and symbolic cues, honoring lived ritual, generational memory, and the intimate performance of marking identity while acknowledging ambiguity in exact ceremonial meanings.
         </p>
     </div>
+
+<!--Footer-->
+<footer>
+  <div>
+    <p style=text-align:center;>The content in this gallery was enrirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published. </p>
+  </div>
+</footer>
+
+<!--BLANK COPY OF COLLECTIONS CARD
+            <div class="collections-card">
+                <div class="collections-image">
+                    <img src="../images/collections/ .jpeg" alt=" ">
+                </div>
+                
+                <div class="collections-info">
+                    <h2> </h2>
+                    <p><strong>Name:</strong> </p>
+                    <p><strong>Material:</strong> </p>
+                    <p><strong>Size/Weight/Shape:</strong> </p>
+                    <p><strong>Estimated Age:</strong> </p>
+                    <p><strong>Preservation State:</strong> </p>
+                    <p><strong>Location Found:</strong> </p>
+                    <p><strong>Likely Purpose:</strong> </p>
+                    <p><strong>Evidence of Use:</strong> </p>
+                    <p><strong>Manufacture Clues:</strong> </p>
+                    <p><strong>Found With:</strong> </p>
+                    <p><strong>Burial or Habitat Context:</strong> </p>
+                    <p><strong>Symbolism:</strong> </p>
+                    <p><strong>Comparison:</strong> </p>
+                </div>
+            </div>-->
 
   <script>
     function showSection(section) {
