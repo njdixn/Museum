@@ -1,43 +1,74 @@
-// Global Variables
-let discountChosen = false;
-let appliedDiscount = 0;
-let appliedLabel = '';
+// VARIABLES
+const FREE_SHIP_THRESHOLD = 100;
 const SHIPPING_RATE = 25.00;
-const FREE_SHIPPING_THRESHOLD = 100.00; // set free shipping threshold
 const TAX_RATE = 0.102;
 
-// Cart Helpers
-function readCart() {
-  return JSON.parse(localStorage.getItem('cart') || '[]');
+// HEADER
+function updateCartCount() {
+  const countEl = document.getElementById('cartCount');
+  if (!countEl) return;
+  const cart = readCart();
+  const totalQty = cart.reduce((s, it) => s + (it.qty || 0), 0);
+  countEl.textContent = totalQty;
 }
 
-function writeCart(cart) {
-  localStorage.setItem('cart', JSON.stringify(cart));
+function updateShopQuantityLabels() {
+  const shopItems = document.querySelectorAll('.souvenir-item');
+  if (!shopItems.length) return; 
+  const cart = readCart();
+
+  shopItems.forEach(itemEl => {
+    const id = itemEl.getAttribute('data-id');
+    const badge = itemEl.querySelector('.qty-badge');
+    if (!badge || !id) return;
+
+    const inCart = cart.find(i => i.id === id);
+    const qty = inCart ? inCart.qty : 0;
+
+    badge.textContent = qty > 0 ? `Quantity: ${qty}` : '';
+  });
 }
 
-// Cart Operations
-function addToCart(button) {
-  const id = button.dataset.id;
-  const name = button.dataset.name;
-  const price = parseFloat(button.dataset.price);
-  const image = button.dataset.image;
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();
+  updateShopQuantityLabels();
+});
 
-  let cart = readCart();
-  const item = cart.find(i => i.id === id);
-  if (item) {
-    item.qty++;
+// SHOP
+function addToCart(btnEl) {
+  const id    = btnEl.dataset.id;
+  const name  = btnEl.dataset.name;
+  const price = parseFloat(btnEl.dataset.price);
+  const image = btnEl.dataset.image;
+
+  if (!id || !name || isNaN(price)) return;
+
+  const cart = readCart();
+  const found = cart.find(i => i.id === id);
+
+  if (found) {
+    found.qty += 1;
   } else {
-    cart.push({ id, name, unitPrice: price, qty: 1, image });
+    cart.push({
+      id,
+      name,
+      unitPrice: price,
+      qty: 1,
+      image: image || '../images/default.png'
+    });
   }
+
   writeCart(cart);
   updateCartCount();
   updateShopQuantityLabels();
 }
 
+// CART
 function removeItem(id) {
-  const cart = readCart().filter(it => it.id !== id);
-  writeCart(cart);
-  render();
+  const next = readCart().filter(it => it.id !== id);
+  writeCart(next);
+  render(); 
+  updateShopQuantityLabels(); 
 }
 
 function clearCart() {
@@ -45,73 +76,46 @@ function clearCart() {
   const memberToggle = document.getElementById('memberToggle');
   if (memberToggle) memberToggle.checked = false;
   render();
+
+  updateCartCount();
+  updateShopQuantityLabels();
 }
 
 function updateQty(id, newQty) {
-  let cart = readCart();
+  const cart = readCart();
   const item = cart.find(i => i.id === id);
   if (!item) return;
 
   if (newQty <= 0) {
-    removeItem(id);
-    return;
+    writeCart(cart.filter(i => i.id !== id));
+  } else {
+    item.qty = newQty;
+    writeCart(cart);
   }
-  item.qty = newQty;
-  writeCart(cart);
+
   render();
+  updateCartCount(); 
+  updateShopQuantityLabels(); 
 }
 
-// Cart Count
-function updateCartCount() {
-  const cart = readCart();
-  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-  const countSpan = document.getElementById('cartCount');
-  if (countSpan) countSpan.textContent = totalQty;
-}
-
-// Shop Quantity Labels
-function updateShopQuantityLabels() {
-  const cart = readCart();
-  const items = document.querySelectorAll('.souvenir-item');
-  items.forEach(itemDiv => {
-    const id = itemDiv.dataset.id;
-    const badge = itemDiv.querySelector('.qty-badge');
-    const cartItem = cart.find(i => i.id === id);
-    if (cartItem) {
-      badge.textContent = cartItem.qty;
-    } else {
-      badge.textContent = '';
-    }
-  });
-}
-
-// Money Formatting
-function money(amount) {
-  return `$${amount.toFixed(2)}`;
-}
-
-// Discounts (placeholder)
-function volumeRate(total) {
-  if (total >= 75) return 0.1; // 10% volume discount
-  return 0;
-}
-
-// Cart Rendering
 function render() {
-  const itemsDiv = document.getElementById('items');
+  const itemsDiv   = document.getElementById('items');
   const summaryDiv = document.getElementById('summary');
-  const emptyMsg = document.getElementById('emptyMsg');
-  const isMemberToggle = document.getElementById('memberToggle');
-  const isMember = isMemberToggle ? isMemberToggle.checked : false;
-
-  const cart = readCart().filter(it => it.qty > 0 && it.unitPrice > 0);
+  const emptyMsg   = document.getElementById('emptyMsg');
+  const memberToggle = document.getElementById('memberToggle');
 
   if (!itemsDiv || !summaryDiv || !emptyMsg) return;
+
+  const isMember = !!(memberToggle && memberToggle.checked);
+
+  let cart = readCart().filter(it => (it.qty > 0) && (it.unitPrice > 0));
 
   if (cart.length === 0) {
     itemsDiv.hidden = true;
     summaryDiv.hidden = true;
+    summaryDiv.innerHTML = '';
     emptyMsg.hidden = false;
+
     updateCartCount();
     return;
   }
@@ -121,42 +125,40 @@ function render() {
   emptyMsg.hidden = true;
   itemsDiv.innerHTML = '';
 
-  let itemTotal = 0;
-
-  // --- Cart Header (including Unit Price) ---
+  // HEADER
   const header = document.createElement('div');
   header.classList.add('cart-header');
   header.style.display = 'grid';
-  header.style.gridTemplateColumns = '80px 2fr 1fr 1fr 1fr 1fr'; // Image | Name | Unit | Quantity | Price | Remove
+  header.style.gridTemplateColumns = '80px 2fr 1fr 1fr 1fr 1fr'; 
   header.style.fontWeight = 'bold';
   header.style.marginBottom = '8px';
 
-  ['Image', 'Name', 'Unit Price', 'Quantity', 'Price', 'Remove'].forEach(text => {
+  ['Image', 'Name', 'Quantity', 'Unit Price', 'Total Price','Remove'].forEach(text => {
     const h = document.createElement('div');
     h.textContent = text;
     header.appendChild(h);
   });
   itemsDiv.appendChild(header);
 
-  // --- Cart Items ---
-  cart.forEach(item => {
+  // Rows
+  let itemTotal = 0;
+  for (const item of cart) {
     const line = document.createElement('div');
     line.classList.add('cart-item');
     line.dataset.id = item.id;
 
+    // Image
     const img = document.createElement('img');
     img.src = item.image || '../images/default.png';
     img.alt = item.name;
     img.classList.add('cart-item-image');
 
+    // Name
     const name = document.createElement('div');
     name.textContent = item.name;
     name.classList.add('cart-item-name');
 
-    const unitPriceDiv = document.createElement('div');
-    unitPriceDiv.textContent = money(item.unitPrice);
-    unitPriceDiv.classList.add('cart-item-price');
-
+    // Qty controls
     const qtyDiv = document.createElement('div');
     qtyDiv.classList.add('cart-item-qty');
 
@@ -174,68 +176,63 @@ function render() {
 
     qtyDiv.append(minusBtn, qtyValue, plusBtn);
 
-    const price = document.createElement('div');
-    price.textContent = money(item.unitPrice * item.qty);
-    price.classList.add('cart-item-price');
+    // Unit Price
+    const unitPrice = document.createElement('div');
+    unitPrice.textContent = money(item.unitPrice);
+    unitPrice.classList.add('cart-item-price');
 
+    //Total price per item
+    const totalCell = document.createElement('div');
+    totalCell.textContent = money(item.unitPrice * item.qty);
+    totalCell.classList.add('cart-item-price');
+
+    // Remove
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
     removeBtn.classList.add('cart-item-remove');
-    removeBtn.onclick = () => removeItem(item.id);
+    removeBtn.addEventListener('click', () => removeItem(item.id));
 
-    line.append(img, name, unitPriceDiv, qtyDiv, price, removeBtn);
+    // Append row
+    line.append(img, name, qtyDiv, unitPrice, totalCell, removeBtn);
     itemsDiv.appendChild(line);
 
     itemTotal += item.unitPrice * item.qty;
-  });
+  }
 
-  // --- Discounts ---
+  // ----- Discounts -----
   const volumeDiscountRate = volumeRate(itemTotal);
   const volumeDiscount = itemTotal * volumeDiscountRate;
-  const memberDiscount = isMember ? itemTotal * 0.15 : 0;
+  const memberDiscountAmt = isMember ? itemTotal * 0.15 : 0;
 
-  if (!discountChosen && isMember && volumeDiscountRate > 0) {
-    const choice = prompt("Only one discount may be applied. Type 'M' for Member or 'V' for Volume:");
-    if (choice === 'M') {
-      appliedDiscount = memberDiscount;
+  let appliedDiscount = 0;
+  let appliedLabel = 'No Discount Applied';
+  if (memberDiscountAmt > 0 || volumeDiscount > 0) {
+    if (memberDiscountAmt >= volumeDiscount) {
+      appliedDiscount = memberDiscountAmt;
       appliedLabel = 'Member Discount';
-    } else if (choice === 'V') {
+    } else {
       appliedDiscount = volumeDiscount;
       appliedLabel = 'Volume Discount';
-    } else {
-      appliedDiscount = 0;
-      appliedLabel = 'No Discount Applied';
     }
-    discountChosen = true;
-  } else if (isMember) {
-    appliedDiscount = memberDiscount;
-    appliedLabel = 'Member Discount';
-  } else if (volumeDiscountRate > 0) {
-    appliedDiscount = volumeDiscount;
-    appliedLabel = 'Volume Discount';
-  } else {
-    appliedDiscount = 0;
-    appliedLabel = 'No Discount Applied';
   }
 
-  // --- Shipping (with threshold) ---
-  let shippingCost = SHIPPING_RATE;
-  if (itemTotal >= FREE_SHIPPING_THRESHOLD) {
-    shippingCost = 0;
-  }
+  // Shipping 
+  const merchandiseAfterDiscount = itemTotal - appliedDiscount;
+  const shippingCost = (merchandiseAfterDiscount >= FREE_SHIP_THRESHOLD) ? 0 : SHIPPING_RATE;
 
-  const subtotal = itemTotal - appliedDiscount + shippingCost;
-  const taxAmount = subtotal * TAX_RATE;
-  const invoiceTotal = subtotal + taxAmount;
+  // Totals 
+  const subtotalTaxable = merchandiseAfterDiscount + shippingCost;
+  const taxAmount = subtotalTaxable * TAX_RATE;
+  const invoiceTotal = subtotalTaxable + taxAmount;
 
-  // --- Build Summary ---
+  // Summary 
   summaryDiv.innerHTML = '';
   const summaryItems = [
     { label: 'Subtotal of Items:', value: money(itemTotal) },
     { label: appliedLabel + ':', value: money(-appliedDiscount), negative: appliedDiscount > 0 },
-    { label: 'Shipping ($100+ gets free shipping!):', value: money(shippingCost) },
-    { label: 'Subtotal (Taxable):', value: money(subtotal) },
-    { label: `Tax Rate:`, value: (TAX_RATE * 100).toFixed(1) + '%' },
+    { label: 'Shipping:', value: money(shippingCost) },
+    { label: 'Subtotal (Taxable):', value: money(subtotalTaxable) },
+    { label: 'Tax Rate:', value: (TAX_RATE * 100).toFixed(1) + '%' },
     { label: 'Tax Amount:', value: money(taxAmount) },
     { label: 'Invoice Total:', value: money(invoiceTotal), total: true }
   ];
@@ -257,17 +254,33 @@ function render() {
     summaryDiv.appendChild(row);
   });
 
+if (shippingCost === 0) {
+  const banner = document.createElement('div');
+  banner.className = 'free-shipping-msg';
+  banner.textContent = 'Congratulations! You qualify for free shipping.';
+  summaryDiv.appendChild(banner);
+}
+
   updateCartCount();
   updateShopQuantityLabels();
 }
 
-
+// PAGE
 document.addEventListener('DOMContentLoaded', () => {
   const memberToggle = document.getElementById('memberToggle');
   const clearBtn = document.getElementById('clearBtn');
 
-  if (memberToggle) memberToggle.addEventListener('change', render);
-  if (clearBtn) clearBtn.addEventListener('click', clearCart);
+  if (memberToggle) {
+    memberToggle.addEventListener('change', render);
+  }
+  if (clearBtn) {
+    clearBtn.addEventListener('click', clearCart);
+  }
 
-  render();
+  if (document.getElementById('items') && document.getElementById('summary') && document.getElementById('emptyMsg')) {
+    render();
+  } else {
+    updateCartCount();
+    updateShopQuantityLabels();
+  }
 });
